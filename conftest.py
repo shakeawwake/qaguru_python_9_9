@@ -1,5 +1,6 @@
 import pytest
-from selene.support.shared import browser
+from selene import browser
+
 
 @pytest.fixture()
 def open_browser():
