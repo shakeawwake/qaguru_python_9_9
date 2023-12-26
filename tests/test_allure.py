@@ -3,18 +3,18 @@ from selene import browser, have, by
 from allure_commons.types import Severity
 from selene.support.shared.jquery_style import s
 
-def test_decorator_steps():
-    open_main_page('https://github.com')
-    searching_repo('shakeawwake/qaguru_python_9_9')
-    going_to_issues()
-    check_issue()
-
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)
 @allure.label("owner", "shakeawwake")
 @allure.feature("Issues в репозитории")
 @allure.story("Пользователь может просмотреть issue в репо")
 @allure.link("https://github.com", name="Testing")
+def test_decorator_steps():
+    open_main_page('https://github.com')
+    searching_repo('shakeawwake/qaguru_python_9_9')
+    going_to_issues()
+    check_issue()
+
 
 
 @allure.step('Открытие гитхаб {page}')
